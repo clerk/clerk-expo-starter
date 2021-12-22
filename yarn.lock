@@ -1051,21 +1051,39 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@clerk/clerk-expo@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-expo/-/clerk-expo-0.0.1.tgz#c8e0deb4d58962d1988062d40538aa45ae33b86a"
-  integrity sha512-NwAj/bhN6bO0LA5m8Sqo66rkPi/t3mdKdGdmp3IobdfTKWrfdneASt6be4htuUdpGjknNL+zf+m8HGvnfoWIuA==
+<<<<<<< HEAD
+"@clerk/clerk-expo@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-expo/-/clerk-expo-0.1.4.tgz#d8a0d10baab222cd1447db2a75767bbacd54ccea"
+  integrity sha512-HXxeZEpla93ht1QFHddxyEfb6XXsHz5OTTG3zykWCStsc1E/5m4zZMGir/9nfqa+9hEYvc2CBqpxddjhewQ7JA==
   dependencies:
-    "@clerk/clerk-js" "2.4.2"
-    "@clerk/clerk-react" "2.2.2"
+    "@clerk/clerk-js" "2.6.3"
+    "@clerk/clerk-react" "2.4.3"
     base-64 "^1.0.0"
 
-"@clerk/clerk-js@2.4.2":
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-js/-/clerk-js-2.4.2.tgz#c9240917234b8f61737bb70cafa540b7e8696455"
-  integrity sha512-fY8qkQfd6HqucRQAjdZUQKn12AoJjTGi1F1E4zkFPEKTIKODYLGI7P9TiUyuOh4B0vnwYAwVsKmABEAsbHMrjQ==
+"@clerk/clerk-js@2.6.3":
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-js/-/clerk-js-2.6.3.tgz#5dc74f39c900b99136e3fe33831406be8350f145"
+  integrity sha512-8tkqxgQ5WrL75yrE+GeDnj1H9QaOq+50XdAF9Z0RZwQa36u/GwtYvJoz+K9ZO8eI3MWOXAI8hVOQNivn6Uhe0g==
   dependencies:
-    "@clerk/types" "1.17.2"
+    "@clerk/types" "1.19.2"
+=======
+"@clerk/clerk-expo@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-expo/-/clerk-expo-0.5.0.tgz#76ea308bfd901ba7eb6fbeeecd2e8eabd58c7c99"
+  integrity sha512-0eNb3wEbJoz0k57DBZG0DSppaL9CGGvcJi37uNqfPldXRMh4ycO+kFZX3/edz28v3Qn97FxIisDrJwGqQAMLBw==
+  dependencies:
+    "@clerk/clerk-js" "2.9.0"
+    "@clerk/clerk-react" "2.8.0"
+    base-64 "^1.0.0"
+
+"@clerk/clerk-js@2.9.0":
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-js/-/clerk-js-2.9.0.tgz#103f31180de0b3bafe3a240a2523d1685f4d5f8d"
+  integrity sha512-8LsJzmMI+P1G6dfja1v1Rm5VEJ9hXAY3F9ivdvzbI5lpgRngA1cA++DBrjtVYnISHHadgYvKLuR/ZEb/YiC8tQ==
+  dependencies:
+    "@clerk/types" "1.22.0"
+>>>>>>> f67669e (fixup! Bump @clerk/clerk-expo version)
     "@popperjs/core" "^2.4.4"
     browser-tabs-lock "^1.2.15"
     classnames "^2.2.6"
@@ -1078,17 +1096,32 @@
     react-popper "^2.2.3"
     regenerator-runtime "^0.13.7"
 
-"@clerk/clerk-react@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-2.2.2.tgz#16711c40c740c16baa3ece93b64cdd41427b7719"
-  integrity sha512-G6OmFbrW3ERHY5PBKkaiayD0KouZVD5z78V2OxDVl67BevQ70EjJr13D6+jtgnfSxa+eQJcfEcvU83SegIZ26w==
+<<<<<<< HEAD
+"@clerk/clerk-react@2.4.3":
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-2.4.3.tgz#4412c70cbe0f9946465ef431c0f344b63fb1c1b3"
+  integrity sha512-MAYPRQv+8gHcNOCC0KaLodRhNKOZKhlQeF2VhmrpN1sGIuoo7eZsgWDcRrad2tvQsnxR4jfaAzl9ZV38TQYXdw==
   dependencies:
-    "@clerk/types" "1.17.2"
+    "@clerk/types" "1.19.2"
 
-"@clerk/types@1.17.2":
-  version "1.17.2"
-  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-1.17.2.tgz#dce7dc307c2da06d1603bdac09f412535436e049"
-  integrity sha512-LKmrG5OfXZDFn8FXpGgW5hzVpKrk3aZRMOZ3gMbeNchP5txZqxekCnmPP3cWOpbQ30mknxB9/kzlJil+zPukwQ==
+"@clerk/types@1.19.2":
+  version "1.19.2"
+  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-1.19.2.tgz#64b1eded2b67fc3a53795f0ab9adea982274522a"
+  integrity sha512-1d6goPZV0mbgEScZevzC1d08XOMSREJNYcE5krMeRsRVtdaKPznJaTv9sGWfgj4wjRT4BtBv1F1B9VrrCuHLoQ==
+=======
+"@clerk/clerk-react@2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-2.8.0.tgz#ab716e819165be0b69129283acc67a77990c8a09"
+  integrity sha512-cxuSLp5EagG1SBfRA8hMSc+DHVWU/h+qULHZolZ4IqUGM9vgDCs/JxeChFfT8m1s1DuV3iGU9uRxjuVra+bRYw==
+  dependencies:
+    "@clerk/types" "1.22.0"
+    tslib "^2.3.1"
+
+"@clerk/types@1.22.0":
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-1.22.0.tgz#436340d41af8b11ced99070b27d8269499b78087"
+  integrity sha512-NUtGcsUQp2Nr3ayuLMitW/6D468QNEvBwAI79PQ8PW3pS5coobaOvTy7ZaKy70ouRmRZ0+gFSFzmmJkP8BkOKw==
+>>>>>>> f67669e (fixup! Bump @clerk/clerk-expo version)
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
