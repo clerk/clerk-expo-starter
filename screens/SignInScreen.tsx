@@ -24,7 +24,7 @@ export default function SignInScreen({
       await setSession(completeSignIn.createdSessionId);
     } catch (err) {
       // @ts-ignore
-      log("Error:> " + (err.errors && err.errors[0].message) || err);
+      log("Error:> " + (err.errors ? err.errors[0].message : err));
     }
   };
 

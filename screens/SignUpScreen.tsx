@@ -9,7 +9,6 @@ export default function SignUpScreen({
   navigation,
 }: RootStackScreenProps<"SignUp">) {
   const signUp = useSignUp();
-
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [emailAddress, setEmailAddress] = React.useState("");
@@ -30,7 +29,7 @@ export default function SignUpScreen({
       navigation.navigate("VerifyCode");
     } catch (err) {
       // @ts-ignore
-      log("Error:> ", (err.errors && err.errors[0].message) || err);
+      log("Error:> " + (err.errors ? err.errors[0].message : err));
     }
   };
 
