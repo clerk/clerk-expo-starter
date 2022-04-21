@@ -1,20 +1,24 @@
 import React from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
-import { useClerk, useSignIn } from "@clerk/clerk-expo";
+import { useSignIn } from "@clerk/clerk-expo";
 import { log } from "../logger";
 import { RootStackScreenProps } from "../types";
+import { SignInWithOauth } from "../components/SignInWithOauth";
 import { styles } from "../components/Styles";
 
 export default function SignInScreen({
   navigation,
 }: RootStackScreenProps<"SignIn">) {
-  const { setSession } = useClerk();
-  const signIn = useSignIn();
+  const { signIn, setSession, isLoaded } = useSignIn();
 
   const [emailAddress, setEmailAddress] = React.useState("");
   const [password, setPassword] = React.useState("");
 
   const onSignInPress = async () => {
+    if (!isLoaded) {
+      return;
+    }
+
     try {
       const completeSignIn = await signIn.create({
         identifier: emailAddress,
@@ -32,6 +36,10 @@ export default function SignInScreen({
 
   return (
     <View style={styles.container}>
+      <View style={styles.oauthView}>
+        <SignInWithOauth />
+      </View>
+
       <View style={styles.inputView}>
         <TextInput
           autoCapitalize="none"

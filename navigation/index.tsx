@@ -31,13 +31,18 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
  * https://reactnavigation.org/docs/auth-flow
  */
 const RootNavigator = () => {
-  const { user, isSignedOut } = useUser({
-    withAssertions: true,
-  });
+  const { isSignedIn } = useUser();
+
   return (
     <ClerkLoaded>
       <Stack.Navigator>
-        {isSignedOut(user) ? (
+        {isSignedIn ? (
+          <Stack.Screen
+            name="MyProfile"
+            component={MyProfileScreen}
+            options={{ title: "MyProfile" }}
+          />
+        ) : (
           <>
             <Stack.Screen
               name="SignUp"
@@ -55,12 +60,6 @@ const RootNavigator = () => {
               options={{ title: "Sign Up" }}
             />
           </>
-        ) : (
-          <Stack.Screen
-            name="MyProfile"
-            component={MyProfileScreen}
-            options={{ title: "MyProfile" }}
-          />
         )}
       </Stack.Navigator>
     </ClerkLoaded>

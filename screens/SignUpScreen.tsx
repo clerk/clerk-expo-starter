@@ -4,17 +4,22 @@ import { useSignUp } from "@clerk/clerk-expo";
 import { log } from "../logger";
 import { RootStackScreenProps } from "../types";
 import { styles } from "../components/Styles";
+import { SignUpWithOauth } from "../components/SignUpWithOauth";
 
 export default function SignUpScreen({
   navigation,
 }: RootStackScreenProps<"SignUp">) {
-  const signUp = useSignUp();
+  const { isLoaded, signUp } = useSignUp();
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [emailAddress, setEmailAddress] = React.useState("");
   const [password, setPassword] = React.useState("");
 
   const onSignUpPress = async () => {
+    if (!isLoaded) {
+      return;
+    }
+
     try {
       await signUp.create({
         firstName,
@@ -37,6 +42,10 @@ export default function SignUpScreen({
 
   return (
     <View style={styles.container}>
+      <View style={styles.oauthView}>
+        <SignUpWithOauth />
+      </View>
+
       <View style={styles.inputView}>
         <TextInput
           value={firstName}

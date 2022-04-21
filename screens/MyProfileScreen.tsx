@@ -1,12 +1,6 @@
 import * as React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import {
-  SignedIn,
-  SignedOut,
-  useClerk,
-  useSession,
-  useUser,
-} from "@clerk/clerk-expo";
+import { SignedIn, SignedOut, useAuth, useUser } from "@clerk/clerk-expo";
 import { log } from "../logger";
 import { RootStackScreenProps } from "../types";
 
@@ -28,9 +22,8 @@ export default function SafeMyProfileScreen(
 }
 
 function MyProfileScreen({ navigation }: RootStackScreenProps<"MyProfile">) {
-  const { signOut } = useClerk();
-  const { getToken } = useSession();
-  const { firstName } = useUser();
+  const { getToken, signOut } = useAuth();
+  const { user } = useUser();
 
   const [sessionToken, setSessionToken] = React.useState("");
 
@@ -54,7 +47,7 @@ function MyProfileScreen({ navigation }: RootStackScreenProps<"MyProfile">) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hello {firstName}</Text>
+      <Text style={styles.title}>Hello {user?.firstName}</Text>
       <TouchableOpacity onPress={onSignOutPress} style={styles.link}>
         <Text style={styles.linkText}>Sign out</Text>
       </TouchableOpacity>

@@ -17,13 +17,30 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "associatedDomains": ["applinks:clerk.helping.lemming-64.lclstage.dev"],
+      "bundleIdentifier": "dev.clerk.clerkexpostarter"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "clerk.helping.lemming-64.lclstage.dev",
+              "pathPrefix": "/v1/oauth-native-callback"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ],
+      "package": "com.sokratisv.clerkexpostarter"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"

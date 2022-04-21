@@ -7,18 +7,21 @@ import { styles } from "../components/Styles";
 export default function SignUpScreen({
   navigation,
 }: RootStackScreenProps<"VerifyCode">) {
-  const clerk = useClerk();
-  const signUp = useSignUp();
+  const { isLoaded, signUp, setSession } = useSignUp();
 
   const [code, setCode] = React.useState("");
 
   const onPress = async () => {
+    if (!isLoaded) {
+      return;
+    }
+
     try {
       const completeSignUp = await signUp.attemptEmailAddressVerification({
         code,
       });
 
-      await clerk.setSession(completeSignUp.createdSessionId);
+      await setSession(completeSignUp.createdSessionId);
     } catch (err) {
       // @ts-ignore
       log("Error:> " + (err.errors ? err.errors[0].message : err));

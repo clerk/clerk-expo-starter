@@ -73,4 +73,11 @@ export const styles = StyleSheet.create({
     color: "#000",
     fontWeight: "bold",
   },
+
+  oauthView: {
+    width: "90%",
+    borderBottomWidth: 1,
+    borderBottomColor: "#000",
+    marginBottom: 20,
+  },
 });
