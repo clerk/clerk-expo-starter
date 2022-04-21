@@ -16,18 +16,19 @@ To run the example locally you need to:
 4. `yarn` to install the required dependencies.
 5. `yarn start` to launch the Expo development server.
 
-## Sign up configuration
+## Sign up & Sign in configuration
 
-For the sign up flow to work as demonstrated, you need to log into your [Clerk dashboard](https://dashboard.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) and make sure the following settings have been configured:
+For the sign up flow to work as demonstrated, you need to log into your [Clerk Dashboard](https://dashboard.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) and make sure the following settings have been configured in **User & Authentication** and **Social login** sections:
 
-1. **User Model** > **Profile** > **Name** set ON (for first and last names)
-2. **Authentication** > **Standard Form Fields** > **Standard form fields authentication** set ON (should be the default)
-3. **Authentication** > **Standard Form Fields** > **Authentication strategy** set to **Passwordless**, click the gear icon and choose **One-time codes** then apply changes. You can then change it back to **Password**. (This is due to a regression bug we're working on.)
+1. In Contact information section enable **Email Address** and pick **Email verification code** method in the modal.
+2. In Authentication factors section enable **Password** and **Email verification code**.
+3. In Personal information, enable **Name** to use first and last names during sign up
+4. In Social Login, enable **Google** Oauth provider.
 
 ## Learn more
 
 To learn more about Clerk and Expo, take a look at our
-[official documentation](https://docs.clerk.dev/reference/clerk-expo?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter).
+[official documentation](https://reference.clerk.dev/reference/clerk-expo?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter).
 
 ## Having trouble?
 
