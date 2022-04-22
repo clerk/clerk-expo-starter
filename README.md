@@ -4,7 +4,15 @@ This starter project shows how to use [Clerk](https://www.clerk.dev/?utm_source=
 
 ## Demo
 
-<img src="./docs/demo.gif" width="300">
+### Sign up using One-time passcode (OTP)
+
+<img src="./docs/sign-up-otp-demo.gif" width="300">
+
+---
+
+### Sign in using OAuth
+
+<img src="./docs/sign-in-oauth-demo.gif" width="300">
 
 ## How to use
 
