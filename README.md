@@ -32,6 +32,7 @@ For the sign up flow to work as demonstrated, you need to log into your [Clerk D
 2. In Authentication factors section enable **Password** and **Email verification code**.
 3. In Personal information, enable **Name** to use first and last names during sign up
 4. In Social Login, enable **Google** Oauth provider.
+5. Whitelist your custom redirect URL via Clerk [Backend API](https://reference.clerk.dev/reference/backend-api-reference/redirect-urls)
 
 ## Learn more
 

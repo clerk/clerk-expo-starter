@@ -16,8 +16,8 @@ export function SignUpWithOauth() {
     try {
       // Create a redirect url for the current platform and environment.
       //
-      // This redirect URL needs to be whitelisted in Clerk.
-      // Contact us at support@clerk.dev to do it for you.
+      // This redirect URL needs to be whitelisted for your instance via
+      // https://reference.clerk.dev/reference/backend-api-reference/redirect-urls#add-a-redirect-url
       //
       // For more information go to:
       // https://docs.expo.dev/versions/latest/sdk/auth-session/#authsessionmakeredirecturi
