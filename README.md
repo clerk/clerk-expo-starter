@@ -1,20 +1,41 @@
+<p align="center">
+  <a href="https://clerk.dev?utm_source=github&utm_medium=clerk_expo" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.clerk.dev/static/clerk.svg" alt="Clerk logo" height="50">
+  </a>
+  <br />
+</p>
+
 # Clerk Expo Starter
 
-This starter project shows how to use [Clerk](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) with [Expo](https://expo.dev/) to authenticate users in your [React Native](https://reactnative.dev/) application. When users sign up or sign in, Clerk handles the state of the authentication and renders public or [protected routes](https://reactnavigation.org/docs/auth-flow).
+<div align="center">
 
-## Demo
+[![Chat on Discord](https://img.shields.io/discord/856971667393609759.svg?logo=discord)](https://discord.com/invite/b5rXHjAg7A)
+[![Clerk documentation](https://img.shields.io/badge/documentation-clerk-green.svg)](https://clerk.dev/docs?utm_source=github&utm_medium=clerk_expo_starter)
+[![Follow on Twitter](https://img.shields.io/twitter/follow/ClerkDev?style=social)](https://twitter.com/intent/follow?screen_name=ClerkDev)
 
-### Sign up using One-time passcode (OTP)
-
-<img src="./docs/sign-up-otp-demo.gif" width="300">
+</div>
 
 ---
 
-### Sign in using OAuth
+This starter project shows how to use [Clerk](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) with [Expo](https://expo.dev/) to authenticate users in your [React Native](https://reactnative.dev/) application. When users sign up or sign in, Clerk handles the state of the authentication and switches between public or [protected routes](https://reactnavigation.org/docs/auth-flow).
 
-<img src="./docs/sign-in-oauth-demo.gif" width="300">
+## Demo
 
-## How to use
+### Sign up using One-time passcodes (OTP) & Sign in using OAuth
+
+<div float="left">
+  <img src="./docs/sign-up-otp-demo.gif" height="300">
+  <img src="./docs/sign-in-oauth-demo.gif" height="300">
+</div>
+
+## Getting Started
+
+### Prerequisites
+
+- React v16+
+- Node.js v14+
+
+### Setup
 
 To run the example locally you need to:
 
@@ -24,7 +45,7 @@ To run the example locally you need to:
 4. `yarn` to install the required dependencies.
 5. `yarn start` to launch the Expo development server.
 
-## Sign up & Sign in configuration
+### Sign up & Sign in configuration
 
 For the sign up flow to work as demonstrated, you need to log into your [Clerk Dashboard](https://dashboard.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) and make sure the following settings have been configured in **User & Authentication** and **Social login** sections:
 
@@ -39,6 +60,10 @@ For the sign up flow to work as demonstrated, you need to log into your [Clerk D
 To learn more about Clerk and Expo, take a look at our
 [official documentation](https://reference.clerk.dev/reference/clerk-expo?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter).
 
-## Having trouble?
+## Support
 
-If you find any bug, something is not working as expected or you would like to see if we can support your use case, you can reach out to any of our [support channels](https://clerk.dev/support?utm_source=github&utm_medium=starters&utm_campaign=expo_starter), or just open a new issue!
+You can get in touch with us in any of the following ways:
+
+- Join our official community [Discord server](https://discord.com/invite/b5rXHjAg7A)
+- Open a [GitHub support issue](https://github.com/clerkinc/javascript/issues/new?assignees=&labels=question&template=ask_a_question.md&title=Support%3A+)
+- Contact options listed on [our Support page](https://clerk.dev/support?utm_source=github&utm_medium=clerk_expo_starter)
