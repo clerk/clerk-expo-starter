@@ -49,11 +49,17 @@ To run the example locally you need to:
 
 For the sign up flow to work as demonstrated, you need to log into your [Clerk Dashboard](https://dashboard.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) and make sure the following settings have been configured in **User & Authentication** and **Social login** sections:
 
+#### For development instances
+
 1. In Contact information section enable **Email Address** and pick **Email verification code** method in the modal.
 2. In Authentication factors section enable **Password** and **Email verification code**.
 3. In Personal information, enable **Name** to use first and last names during sign up
 4. In Social Login, enable **Google** Oauth provider.
-5. Whitelist your custom redirect URL via Clerk [Backend API](https://reference.clerk.dev/reference/backend-api-reference/redirect-urls)
+
+#### For production instances
+
+1. Follow all the steps above
+2. Whitelist your custom redirect URL via Clerk [Backend API](https://reference.clerk.dev/reference/backend-api-reference/redirect-urls) for maximum security during native OAuth flows.
 
 ## Learn more
 
