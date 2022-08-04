@@ -59,7 +59,8 @@ For the sign up flow to work as demonstrated, you need to log into your [Clerk D
 #### For production instances
 
 1. Follow all the steps above
-2. Whitelist your custom redirect URL via Clerk [Backend API](https://reference.clerk.dev/reference/backend-api-reference/redirect-urls) for maximum security during native OAuth flows.
+2. Whitelist your custom redirect URL via [Clerk Dashboard](https://dashboard.clerk.dev/last-active?path=/user-authentication/social-login) for maximum security during native OAuth flows.
+   ![This is an image](./docs/whitelist-redirect-urls-for-mobile-oauth.png)
 
 ## Learn more
 
