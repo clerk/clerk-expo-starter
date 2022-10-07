@@ -1,23 +1,28 @@
 <p align="center">
-  <a href="https://clerk.dev?utm_source=github&utm_medium=clerk_expo" target="_blank" rel="noopener noreferrer">
-    <img src="https://images.clerk.dev/static/clerk.svg" alt="Clerk logo" height="50">
+  <a href="https://clerk.dev?utm_source=github&utm_medium=clerk_expo" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./docs/clerk-logo-dark.png">
+      <img src="./docs/clerk-logo-light.png" height="64">
+    </picture>
   </a>
   <br />
 </p>
 
 # Clerk Expo Starter
 
-<div align="center">
+This starter project shows how to use [Clerk](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) with [Expo](https://expo.dev/) to authenticate users in your [React Native](https://reactnative.dev/) application. When users sign up or sign in, Clerk handles the state of the authentication and switches between public or [protected routes](https://reactnavigation.org/docs/auth-flow).
 
-[![Chat on Discord](https://img.shields.io/discord/856971667393609759.svg?logo=discord)](https://discord.com/invite/b5rXHjAg7A)
-[![Clerk documentation](https://img.shields.io/badge/documentation-clerk-green.svg)](https://clerk.dev/docs?utm_source=github&utm_medium=clerk_expo_starter)
-[![Follow on Twitter](https://img.shields.io/twitter/follow/ClerkDev?style=social)](https://twitter.com/intent/follow?screen_name=ClerkDev)
-
-</div>
+[![chat on Discord](https://img.shields.io/discord/856971667393609759.svg?logo=discord)](https://discord.com/invite/b5rXHjAg7A)
+[![documentation](https://img.shields.io/badge/documentation-clerk-green.svg)](https://docs.clerk.dev)
+[![twitter](https://img.shields.io/twitter/follow/ClerkDev?style=social)](https://twitter.com/intent/follow?screen_name=ClerkDev)
 
 ---
 
-This starter project shows how to use [Clerk](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) with [Expo](https://expo.dev/) to authenticate users in your [React Native](https://reactnative.dev/) application. When users sign up or sign in, Clerk handles the state of the authentication and switches between public or [protected routes](https://reactnavigation.org/docs/auth-flow).
+**Clerk is Hiring!**
+
+Would you like to work on Open Source software and help maintain this repository? [Apply today!](https://apply.workable.com/clerk-dev/)
+
+---
 
 ## Demo
 
