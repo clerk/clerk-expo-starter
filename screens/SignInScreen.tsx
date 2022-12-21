@@ -26,9 +26,9 @@ export default function SignInScreen({
       });
 
       await setSession(completeSignIn.createdSessionId);
-    } catch (err) {
-      // @ts-ignore
-      log("Error:> " + (err.errors ? err.errors[0].message : err));
+    } catch (err: any) {
+        log("Error:> " + err?.status || '');
+        log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }
   };
 

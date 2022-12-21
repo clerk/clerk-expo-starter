@@ -30,16 +30,16 @@ function MyProfileScreen({ navigation }: RootStackScreenProps<"MyProfile">) {
   const onSignOutPress = async () => {
     try {
       await signOut();
-    } catch (err) {
-      // @ts-ignore
-      log("Error:> " + (err.errors ? err.errors[0].message : err));
+    } catch (err: any) {
+      log("Error:> " + err?.status || '');
+      log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }
   };
 
   React.useEffect(() => {
     const scheduler = setInterval(async () => {
       const token = await getToken();
-      setSessionToken(token);
+      setSessionToken(token as string);
     }, 1000);
 
     return () => clearInterval(scheduler);

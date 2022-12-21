@@ -32,9 +32,9 @@ export default function SignUpScreen({
       await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
 
       navigation.navigate("VerifyCode");
-    } catch (err) {
-      // @ts-ignore
-      log("Error:> " + (err.errors ? err.errors[0].message : err));
+    } catch (err: any) {
+        log("Error:> " + err?.status || '');
+        log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }
   };
 
