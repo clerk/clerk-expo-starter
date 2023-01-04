@@ -7,7 +7,7 @@ import { ClerkProvider } from "@clerk/clerk-expo";
 import { tokenCache } from "./cache";
 
 // Your frontend API goes here
-const frontendApi = "clerk.[your-domain].com";
+const frontendApi = "clerk.funky.possum-69.lcl.dev";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
