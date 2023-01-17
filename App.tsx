@@ -7,7 +7,7 @@ import { ClerkProvider } from "@clerk/clerk-expo";
 import { tokenCache } from "./cache";
 
 // Your frontend API goes here
-const frontendApi = "clerk.[your-domain].com";
+const publishableKey = "clerk.[your-domain].com";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -16,7 +16,7 @@ export default function App() {
     return null;
   } else {
     return (
-      <ClerkProvider frontendApi={frontendApi} tokenCache={tokenCache}>
+      <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
         <SafeAreaProvider>
           <Navigation />
           <StatusBar />
