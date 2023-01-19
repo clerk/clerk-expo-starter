@@ -46,7 +46,7 @@ To run the example locally you need to:
 
 1. Sign up at [Clerk.dev](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter).
 2. Go to your [Clerk dashboard](https://dashboard.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) and create an application.
-3. Set your Frontend API key in `App.tsx`.
+3. Set your publishableKey in `App.tsx` or if you are using a legacy key frontendApi
 4. `npm i` to install the required dependencies.
 5. `npm run start` to launch the Expo development server.
 
