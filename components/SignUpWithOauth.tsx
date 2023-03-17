@@ -65,7 +65,7 @@ export function SignUpWithOauth() {
       await setSession(createdSessionId);
       return;
     } catch (err: any) {
-      log("Error:> " + err?.status || '');
+      log("Error:> " + err?.status || "");
       log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }
   }, []);

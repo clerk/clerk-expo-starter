@@ -33,8 +33,8 @@ export default function SignUpScreen({
 
       navigation.navigate("VerifyCode");
     } catch (err: any) {
-        log("Error:> " + err?.status || '');
-        log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
+      log("Error:> " + err?.status || "");
+      log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }
   };
 

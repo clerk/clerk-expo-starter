@@ -3,7 +3,7 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useClerk, useSignUp } from "@clerk/clerk-expo";
 import { RootStackScreenProps } from "../types";
 import { styles } from "../components/Styles";
-import {log} from "../logger";
+import { log } from "../logger";
 
 export default function SignUpScreen({
   navigation,
@@ -24,7 +24,7 @@ export default function SignUpScreen({
 
       await setSession(completeSignUp.createdSessionId);
     } catch (err: any) {
-      log("Error:> " + err?.status || '');
+      log("Error:> " + err?.status || "");
       log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }
   };

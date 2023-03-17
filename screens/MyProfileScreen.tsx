@@ -31,7 +31,7 @@ function MyProfileScreen({ navigation }: RootStackScreenProps<"MyProfile">) {
     try {
       await signOut();
     } catch (err: any) {
-      log("Error:> " + err?.status || '');
+      log("Error:> " + err?.status || "");
       log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }
   };

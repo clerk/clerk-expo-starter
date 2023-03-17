@@ -27,8 +27,8 @@ export default function SignInScreen({
 
       await setSession(completeSignIn.createdSessionId);
     } catch (err: any) {
-        log("Error:> " + err?.status || '');
-        log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
+      log("Error:> " + err?.status || "");
+      log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }
   };
 
