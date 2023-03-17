@@ -4,8 +4,16 @@ import { useSignUp } from "@clerk/clerk-expo";
 import { log } from "../logger";
 import { styles } from "./Styles";
 import * as AuthSession from "expo-auth-session";
+import { useWamUpBrowser } from "../hooks/useWarmUpBrowser";
+import * as WebBrowser from "expo-web-browser";
+
+WebBrowser.maybeCompleteAuthSession();
 
 export function SignUpWithOauth() {
+  // Warm up the android browser to improve UX
+  // https://docs.expo.dev/guides/authentication/#improving-user-experience
+  useWamUpBrowser();
+
   const { signUp, setSession, isLoaded } = useSignUp();
 
   const onPress = React.useCallback(async () => {
@@ -65,6 +73,7 @@ export function SignUpWithOauth() {
       await setSession(createdSessionId);
       return;
     } catch (err: any) {
+      log("Error:> " + err?.message || "");
       log("Error:> " + err?.status || "");
       log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }

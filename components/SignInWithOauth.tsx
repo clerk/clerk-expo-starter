@@ -1,11 +1,19 @@
 import React from "react";
 import { useSignIn } from "@clerk/clerk-expo";
 import * as AuthSession from "expo-auth-session";
+import * as WebBrowser from "expo-web-browser";
 import { Text, TouchableOpacity } from "react-native";
 import { log } from "../logger";
 import { styles } from "./Styles";
+import { useWamUpBrowser } from "../hooks/useWarmUpBrowser";
+
+WebBrowser.maybeCompleteAuthSession();
 
 export function SignInWithOauth() {
+  // Warm up the android browser to improve UX
+  // https://docs.expo.dev/guides/authentication/#improving-user-experience
+  useWamUpBrowser();
+
   const { signIn, setSession, isLoaded } = useSignIn();
 
   const onPress = React.useCallback(async () => {
@@ -25,14 +33,10 @@ export function SignInWithOauth() {
         path: "/oauth-native-callback",
       });
 
-      await signIn.create({
-        strategy: "oauth_google",
-        redirectUrl,
-      });
+      await signIn.create({ strategy: "oauth_google", redirectUrl });
 
-      const {
-        firstFactorVerification: { externalVerificationRedirectURL },
-      } = signIn;
+      const { externalVerificationRedirectURL } =
+        signIn.firstFactorVerification;
 
       const result = await AuthSession.startAsync({
         authUrl: externalVerificationRedirectURL!.toString(),
@@ -62,6 +66,7 @@ export function SignInWithOauth() {
       await setSession(createdSessionId);
       return;
     } catch (err: any) {
+      log("Error:> " + err?.message || "");
       log("Error:> " + err?.status || "");
       log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }
