@@ -3,7 +3,7 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useSignIn } from "@clerk/clerk-expo";
 import { log } from "../logger";
 import { RootStackScreenProps } from "../types";
-import { SignInWithOauth } from "../components/SignInWithOauth";
+import { OAuthButtons } from "../components/OAuth";
 import { styles } from "../components/Styles";
 
 export default function SignInScreen({
@@ -37,7 +37,7 @@ export default function SignInScreen({
   return (
     <View style={styles.container}>
       <View style={styles.oauthView}>
-        <SignInWithOauth />
+        <OAuthButtons />
       </View>
 
       <View style={styles.inputView}>

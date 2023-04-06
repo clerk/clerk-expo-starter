@@ -4,7 +4,7 @@ import { useSignUp } from "@clerk/clerk-expo";
 import { log } from "../logger";
 import { RootStackScreenProps } from "../types";
 import { styles } from "../components/Styles";
-import { SignUpWithOauth } from "../components/SignUpWithOauth";
+import { OAuthButtons } from "../components/OAuth";
 
 export default function SignUpScreen({
   navigation,
@@ -43,7 +43,7 @@ export default function SignUpScreen({
   return (
     <View style={styles.container}>
       <View style={styles.oauthView}>
-        <SignUpWithOauth />
+        <OAuthButtons />
       </View>
 
       <View style={styles.inputView}>
