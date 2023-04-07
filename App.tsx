@@ -9,8 +9,6 @@ import { tokenCache } from "./cache";
 // Your publishable Key goes here
 const publishableKey = "pk_XXXXXXXXXXXXXXXXXXX";
 
-// if you are using frontendAPI please update this with a value and update the ClerkProvider to frontendApi={frontendApi}
-const frontendApi = "clerk.[your-domain].com";
 export default function App() {
   const isLoadingComplete = useCachedResources();
 
