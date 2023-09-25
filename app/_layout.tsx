@@ -39,7 +39,7 @@ export default function Layout() {
 }
 
 const publishableKey =
-  "pk_test_aGVscGluZy1xdWV0emFsLTM4LmNsZXJrLmFjY291bnRzLmRldiQ";
+  "";
 
 function RootLayoutNav() {
   return (
