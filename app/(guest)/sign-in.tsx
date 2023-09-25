@@ -1,20 +1,18 @@
-import React from "react";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useSignIn } from "@clerk/clerk-expo";
-import { log } from "../logger";
-import { RootStackScreenProps } from "../types";
-import { OAuthButtons } from "../components/OAuth";
-import { styles } from "../components/Styles";
+import { Link, Stack } from "expo-router";
+import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import React from "react";
+import { log } from "../../logger";
+import { OAuthButtons } from "../../components/OAuth";
+import { styles } from "../../components/Styles";
 
-export default function SignInScreen({
-  navigation,
-}: RootStackScreenProps<"SignIn">) {
+export default function Page() {
   const { signIn, setSession, isLoaded } = useSignIn();
 
   const [emailAddress, setEmailAddress] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  const onSignInPress = async () => {
+  const onSignInPress = React.useCallback(async () => {
     if (!isLoaded) {
       return;
     }
@@ -30,12 +28,15 @@ export default function SignInScreen({
       log("Error:> " + err?.status || "");
       log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }
-  };
-
-  const onSignUpPress = () => navigation.replace("SignUp");
+  }, [isLoaded, emailAddress, password]);
 
   return (
     <View style={styles.container}>
+      <Stack.Screen
+        options={{
+          title: "Sign In",
+        }}
+      />
       <View style={styles.oauthView}>
         <OAuthButtons />
       </View>
@@ -69,12 +70,11 @@ export default function SignInScreen({
       <View style={styles.footer}>
         <Text>Have an account?</Text>
 
-        <TouchableOpacity
-          style={styles.secondaryButton}
-          onPress={onSignUpPress}
-        >
-          <Text style={styles.secondaryButtonText}>Sign up</Text>
-        </TouchableOpacity>
+        <Link href="/sign-up" asChild>
+          <TouchableOpacity style={styles.secondaryButton}>
+            <Text style={styles.secondaryButtonText}>Sign up</Text>
+          </TouchableOpacity>
+        </Link>
       </View>
     </View>
   );

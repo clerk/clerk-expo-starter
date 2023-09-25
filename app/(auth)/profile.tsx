@@ -1,30 +1,12 @@
-import * as React from "react";
+import { useAuth, useUser } from "@clerk/clerk-expo";
+import React from "react";
+import { log } from "../../logger";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { SignedIn, SignedOut, useAuth, useUser } from "@clerk/clerk-expo";
-import { log } from "../logger";
-import { RootStackScreenProps } from "../types";
+import { Stack } from "expo-router";
 
-export default function SafeMyProfileScreen(
-  props: RootStackScreenProps<"MyProfile">
-) {
-  return (
-    <>
-      <SignedIn>
-        <MyProfileScreen {...props} />
-      </SignedIn>
-      <SignedOut>
-        <View style={styles.container}>
-          <Text>Unauthorized</Text>
-        </View>
-      </SignedOut>
-    </>
-  );
-}
-
-function MyProfileScreen({ navigation }: RootStackScreenProps<"MyProfile">) {
-  const { getToken, signOut } = useAuth();
+export default function Page() {
+  const { getToken, signOut, isSignedIn } = useAuth();
   const { user } = useUser();
-
   const [sessionToken, setSessionToken] = React.useState("");
 
   const onSignOutPress = async () => {
@@ -47,6 +29,11 @@ function MyProfileScreen({ navigation }: RootStackScreenProps<"MyProfile">) {
 
   return (
     <View style={styles.container}>
+      <Stack.Screen
+        options={{
+          title: "Profile",
+        }}
+      />
       <Text style={styles.title}>Hello {user?.firstName}</Text>
       <TouchableOpacity onPress={onSignOutPress} style={styles.link}>
         <Text style={styles.linkText}>Sign out</Text>
