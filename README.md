@@ -10,7 +10,7 @@
 
 # Clerk Expo Starter
 
-> If you want the new file-system based router that was introduced with [Expo Router V2](https://blog.expo.dev/introducing-expo-router-v2-3850fd5c3ca1), you can check out [this branch](https://github.com/clerkinc/clerk-expo-starter/tree/router-v2)
+> If you want to use new file-system based router that was introduced with [Expo Router V2](https://blog.expo.dev/introducing-expo-router-v2-3850fd5c3ca1), you can check out [this branch](https://github.com/clerkinc/clerk-expo-starter/tree/router-v2)
 
 This starter project shows how to use [Clerk](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) with [Expo](https://expo.dev/) to authenticate users in your [React Native](https://reactnative.dev/) application. When users sign up or sign in, Clerk handles the state of the authentication and switches between public or [protected routes](https://reactnavigation.org/docs/auth-flow).
 
