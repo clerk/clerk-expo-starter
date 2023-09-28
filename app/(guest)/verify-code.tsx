@@ -1,18 +1,16 @@
-import * as React from "react";
+import { Stack } from "expo-router";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
-import { useClerk, useSignUp } from "@clerk/clerk-expo";
-import { RootStackScreenProps } from "../types";
-import { styles } from "../components/Styles";
-import { log } from "../logger";
+import { useSignUp } from "@clerk/clerk-expo";
+import * as React from "react";
+import { log } from "../../logger";
+import { styles } from "../../components/Styles";
 
-export default function SignUpScreen({
-  navigation,
-}: RootStackScreenProps<"VerifyCode">) {
+export default function Page() {
   const { isLoaded, signUp, setSession } = useSignUp();
 
   const [code, setCode] = React.useState("");
 
-  const onPress = async () => {
+  const onPress = React.useCallback(async () => {
     if (!isLoaded) {
       return;
     }
@@ -27,10 +25,16 @@ export default function SignUpScreen({
       log("Error:> " + err?.status || "");
       log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }
-  };
+  }, [isLoaded, code]);
 
   return (
     <View style={styles.container}>
+      <Stack.Screen
+        options={{
+          title: "Verify Code",
+        }}
+      />
+
       <View style={styles.inputView}>
         <TextInput
           value={code}

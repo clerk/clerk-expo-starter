@@ -1,21 +1,19 @@
-import * as React from "react";
+import { Link, router, Stack } from "expo-router";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import React from "react";
 import { useSignUp } from "@clerk/clerk-expo";
-import { log } from "../logger";
-import { RootStackScreenProps } from "../types";
-import { styles } from "../components/Styles";
-import { OAuthButtons } from "../components/OAuth";
+import { OAuthButtons } from "../../components/OAuth";
+import { styles } from "../../components/Styles";
+import { log } from "../../logger";
 
-export default function SignUpScreen({
-  navigation,
-}: RootStackScreenProps<"SignUp">) {
+export default function Page() {
   const { isLoaded, signUp } = useSignUp();
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [emailAddress, setEmailAddress] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  const onSignUpPress = async () => {
+  const onSignUpPress = React.useCallback(async () => {
     if (!isLoaded) {
       return;
     }
@@ -31,17 +29,20 @@ export default function SignUpScreen({
       // https://docs.clerk.dev/popular-guides/passwordless-authentication
       await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
 
-      navigation.navigate("VerifyCode");
+      router.replace("/verify-code");
     } catch (err: any) {
       log("Error:> " + err?.status || "");
       log("Error:> " + err?.errors ? JSON.stringify(err.errors) : err);
     }
-  };
-
-  const onSignInPress = () => navigation.replace("SignIn");
+  }, [isLoaded, firstName, lastName, emailAddress, password]);
 
   return (
     <View style={styles.container}>
+      <Stack.Screen
+        options={{
+          title: "Sign Up",
+        }}
+      />
       <View style={styles.oauthView}>
         <OAuthButtons />
       </View>
@@ -95,12 +96,11 @@ export default function SignUpScreen({
       <View style={styles.footer}>
         <Text>Have an account?</Text>
 
-        <TouchableOpacity
-          style={styles.secondaryButton}
-          onPress={onSignInPress}
-        >
-          <Text style={styles.secondaryButtonText}>Sign in</Text>
-        </TouchableOpacity>
+        <Link href="/sign-in" asChild>
+          <TouchableOpacity style={styles.secondaryButton}>
+            <Text style={styles.secondaryButtonText}>Sign in</Text>
+          </TouchableOpacity>
+        </Link>
       </View>
     </View>
   );

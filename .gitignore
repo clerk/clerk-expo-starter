@@ -74,3 +74,7 @@ dist/
 
 # @end expo-cli
 yarn.lock
+
+# local env files
+.env*.local
+.env

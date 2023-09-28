@@ -10,7 +10,7 @@
 
 # Clerk Expo Starter
 
-This starter project shows how to use [Clerk](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) with [Expo](https://expo.dev/) to authenticate users in your [React Native](https://reactnative.dev/) application. When users sign up or sign in, Clerk handles the state of the authentication and switches between public or [protected routes](https://reactnavigation.org/docs/auth-flow).
+This starter project shows how to use [Clerk](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) with [Expo](https://expo.dev/) to authenticate users in your [React Native](https://reactnative.dev/) application. When users sign up or sign in, Clerk handles the state of the authentication and switches between public or [protected routes](https://docs.expo.dev/router/reference/authentication/).
 
 [![chat on Discord](https://img.shields.io/discord/856971667393609759.svg?logo=discord)](https://discord.com/invite/b5rXHjAg7A)
 [![documentation](https://img.shields.io/badge/documentation-clerk-green.svg)](https://docs.clerk.dev)
@@ -38,7 +38,7 @@ Would you like to work on Open Source software and help maintain this repository
 ### Prerequisites
 
 - React v16+
-- Node.js v14+
+- Node.js v16+
 
 ### Setup
 
@@ -46,13 +46,13 @@ To run the example locally you need to:
 
 1. Sign up at [Clerk.dev](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter).
 2. Go to your [Clerk dashboard](https://dashboard.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) and create an application.
-3. Set your publishableKey in `App.tsx` or if you are using a legacy key frontendApi
+3. Set your publishableKey in `app/_layout.tsx` or if you are using a legacy key frontendApi
 4. `npm i` to install the required dependencies.
 5. `npm run start` to launch the Expo development server.
 
 ### Sign up & Sign in configuration
 
-For the sign up flow to work as demonstrated, you need to log into your [Clerk Dashboard](https://dashboard.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) and make sure the following settings have been configured in **User & Authentication** and **Social login** sections:
+For the sign-up flow to work as demonstrated, you need to log into your [Clerk Dashboard](https://dashboard.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=expo_starter) and make sure the following settings have been configured in **User & Authentication** and **Social login** sections:
 
 #### For development instances
 
