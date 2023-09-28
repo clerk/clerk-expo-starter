@@ -15,10 +15,14 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
-      "associatedDomains": ["applinks:clerk.helping.lemming-64.lclstage.dev"],
+      "associatedDomains": [
+        "applinks:clerk.helping.lemming-64.lclstage.dev"
+      ],
       "bundleIdentifier": "dev.clerk.clerkexpostarter"
     },
     "android": {
@@ -37,7 +41,10 @@
               "pathPrefix": "/v1/oauth-native-callback"
             }
           ],
-          "category": ["BROWSABLE", "DEFAULT"]
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
         }
       ],
       "package": "com.sokratisv.clerkexpostarter"
@@ -45,6 +52,11 @@
     "web": {
       "favicon": "./assets/images/favicon.png",
       "bundler": "metro"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e07fd5f4-3a40-40d6-ba03-4a2304a57645"
+      }
     }
   }
 }
