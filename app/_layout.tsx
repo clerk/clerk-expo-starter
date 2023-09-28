@@ -38,12 +38,14 @@ export default function Layout() {
   return <RootLayoutNav />;
 }
 
-const publishableKey =
-  "";
+const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
 function RootLayoutNav() {
   return (
-    <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
+    <ClerkProvider
+      publishableKey={publishableKey}
+      tokenCache={tokenCache}
+    >
       <SafeAreaProvider>
         <ClerkLoaded>
           <Slot />
