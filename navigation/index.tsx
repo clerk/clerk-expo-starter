@@ -14,6 +14,7 @@ import MyProfileScreen from "../screens/MyProfileScreen";
 import { RootStackParamList } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { ClerkLoaded, useUser } from "@clerk/clerk-expo";
+import * as SplashScreen from "expo-splash-screen";
 
 export default function Navigation() {
   return (
@@ -31,7 +32,13 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
  * https://reactnavigation.org/docs/auth-flow
  */
 const RootNavigator = () => {
-  const { isSignedIn } = useUser();
+  const { isSignedIn, isLoaded } = useUser();
+  
+  React.useEffect(() => {
+    if (isLoaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [isLoaded]);
 
   return (
     <ClerkLoaded>
