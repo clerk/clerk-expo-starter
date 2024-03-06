@@ -5,12 +5,17 @@ import useCachedResources from "./hooks/useCachedResources";
 import Navigation from "./navigation";
 import { ClerkProvider } from "@clerk/clerk-expo";
 import { tokenCache } from "./cache";
+import * as SplashScreen from "expo-splash-screen";
 
 // Your publishable Key goes here
 const publishableKey = "pk_XXXXXXXXXXXXXXXXXXX";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
+
+  React.useEffect(() => {
+    SplashScreen.preventAutoHideAsync();
+  }, []);
 
   if (!isLoadingComplete) {
     return null;
