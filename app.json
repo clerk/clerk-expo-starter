@@ -15,10 +15,14 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
-      "associatedDomains": ["applinks:clerk.helping.lemming-64.lclstage.dev"],
+      "associatedDomains": [
+        "applinks:clerk.helping.lemming-64.lclstage.dev"
+      ],
       "bundleIdentifier": "dev.clerk.clerkexpostarter"
     },
     "android": {
@@ -37,13 +41,20 @@
               "pathPrefix": "/v1/oauth-native-callback"
             }
           ],
-          "category": ["BROWSABLE", "DEFAULT"]
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
         }
       ],
       "package": "com.sokratisv.clerkexpostarter"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font",
+      "expo-secure-store"
+    ]
   }
 }
